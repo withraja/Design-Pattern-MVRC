@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahasiswa</title>
+    <%- include('./head') %>
+  </head>
+  <body>
+    <%- include('./header') %>
+    <h1>Biodata Mahasiswa</h1>
+    <table class="table table-hover">
+      <tr>
+        <th>Nama</th>
+        <th>Domisili</th>
+        <th>Gender</th>
+      </tr>
+      <% data.forEach(el => { %>
+      <tr>
+        <td><%= el.nama %></td>
+        <td><%= el.domisili %></td>
+        <td><%= el.kelamin %></td>
+        <% }) %>
+      </tr>
+    </table>
+
+    <!-- INI FORM -->
+    <form action="/mahasiswa" method="post">
+      <label for="namamhs">Masukkan Nama Mahasiswa:</label><br />
+      <input type="text" id="namamhs" name="nama" /><br />
+      <label for="domisilimhs">Domisili:</label><br />
+      <input type="text" id="domisilimhs" name="domisili" /><br />
+      <label for="gendermhs">Gender:</label><br />
+      <input type="text" id="gendermhs" Gender" name="kelamin" /><br /><br />
+      <input type="submit" class="btn btn-success value="Submit">
+    </form>
+  </body>
+  <%- include('./footer'); %>
+</html>

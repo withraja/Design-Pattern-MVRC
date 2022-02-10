@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosen</title>
+    <%- include('./head') %>
+</head>
+<body>
+    <%- include('./header') %>
+    <h1>Biodata Dosen</h1>
+    <% data.forEach(el => { %>
+    <ul><strong><%= el.nama %></strong> mengajar matakuliah <%= el.matkul %></ul>
+    <% }) %>
+
+    <!-- INI FORM -->
+    <form action="/dosen" method="post">
+        <label for="fname">Masukkan Nama Dosen:</label><br>
+        <input type="text" id="fname" name="nama" /><br>
+        <label for="lname">Matakuliah yang Diajar:</label><br>
+        <input type="text" id="lname" name="matkul" /><br><br>
+        <input type="submit" class="btn btn-success value="Submit">
+      </form> 
+</body>
+<%- include('./footer'); %>
+</html>
